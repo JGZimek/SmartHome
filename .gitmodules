@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/OskarRg/SmartHomeBackend
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/mateusztok/SmartHomeFrontend
