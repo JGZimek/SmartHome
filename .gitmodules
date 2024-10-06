@@ -4,3 +4,9 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/mateusztok/SmartHomeFrontend
+[submodule "embedded/security"]
+	path = embedded/security
+	url = https://github.com/JGZimek/SecuritySystemESP32.git
+[submodule "embedded/control"]
+	path = embedded/control
+	url = https://github.com/JGZimek/ControlSystemESP32.git
