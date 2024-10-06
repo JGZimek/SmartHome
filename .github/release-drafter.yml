@@ -15,21 +15,10 @@ categories:
     labels:
       - 'control'
 
-change-template: '- $TITLE (#$NUMBER by @$AUTHOR in [$MODULE])'
 template: |
-  ## What's Changed
+  ## Changes in the project (from develop branches):
 
-  ### Backend
-  $BACKEND_CHANGES
-
-  ### Frontend
-  $FRONTEND_CHANGES
-
-  ### Security System
-  $SECURITY_CHANGES
-
-  ### Control System
-  $CONTROL_CHANGES
+  $CHANGES
 
   ## Contributors
   Thanks to the following contributors:
