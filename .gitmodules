@@ -4,3 +4,9 @@
 [submodule "embedded/control"]
 	path = embedded/control
 	url = https://github.com/JGZimek/ControlSystemESP32.git
+[submodule "webapp/backend"]
+	path = webapp/backend
+	url = https://github.com/OskarRg/SmartHomeBackend
+[submodule "webapp/frontend"]
+	path = webapp/frontend
+	url = https://github.com/mateusztok/SmartHomeFrontend
