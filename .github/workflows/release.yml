@@ -1,0 +1,45 @@
+name: Generate Release Notes
+
+on:
+  push:
+    tags:
+      - 'v*'  # This workflow triggers when a tag matching "v*" is pushed
+  workflow_dispatch:  # Also allows manual trigger
+
+jobs:
+  generate_release_notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive  # Also checks out submodules recursively
+
+      - name: Checkout develop branch for submodules
+        run: |
+          # Checkout the 'develop' branch for the main repository
+          git checkout develop
+          
+          # Checkout 'develop' branch for each submodule
+          cd webapp/backend && git checkout develop && cd -
+          cd webapp/frontend && git checkout develop && cd -
+          cd embedded/security && git checkout develop && cd -
+          cd embedded/control && git checkout develop && cd -
+
+      - name: Gather submodule changes from develop branches
+        run: |
+          # Collect commit logs only from the 'develop' branch of each submodule
+          echo "## Backend Changes" >> changes.md
+          git log --oneline -- webapp/backend >> changes.md
+          echo "## Frontend Changes" >> changes.md
+          git log --oneline -- webapp/frontend >> changes.md
+          echo "## Security System Changes" >> changes.md
+          git log --oneline -- embedded/security >> changes.md
+          echo "## Control System Changes" >> changes.md
+          git log --oneline -- embedded/control >> changes.md
+
+      - name: Draft Release
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: .github/release-drafter.yml  # Use the Release Drafter config file

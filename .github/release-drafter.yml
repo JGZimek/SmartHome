@@ -1,0 +1,36 @@
+name-template: 'Release v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+
+categories:
+  - title: 'Backend Changes'
+    labels:
+      - 'backend'
+  - title: 'Frontend Changes'
+    labels:
+      - 'frontend'
+  - title: 'Security System Changes'
+    labels:
+      - 'security'
+  - title: 'Control System Changes'
+    labels:
+      - 'control'
+
+change-template: '- $TITLE (#$NUMBER by @$AUTHOR in [$MODULE])'
+template: |
+  ## What's Changed
+
+  ### Backend
+  $BACKEND_CHANGES
+
+  ### Frontend
+  $FRONTEND_CHANGES
+
+  ### Security System
+  $SECURITY_CHANGES
+
+  ### Control System
+  $CONTROL_CHANGES
+
+  ## Contributors
+  Thanks to the following contributors:
+  $CONTRIBUTORS
