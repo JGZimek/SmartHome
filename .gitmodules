@@ -1,9 +1,3 @@
-[submodule "backend"]
-	path = backend
-	url = https://github.com/OskarRg/SmartHomeBackend
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/mateusztok/SmartHomeFrontend
 [submodule "embedded/security"]
 	path = embedded/security
 	url = https://github.com/JGZimek/SecuritySystemESP32.git
